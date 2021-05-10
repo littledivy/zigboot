@@ -4,8 +4,8 @@ const std = @import("std");
 
 pub fn build(b: *Builder) void {
     const kernel = b.addExecutable("zigboot", "main.zig");
+    
     kernel.setOutputDir("build");
-
     kernel.addAssemblyFile("boot.s");
     
     kernel.setBuildMode(b.standardReleaseOptions());
